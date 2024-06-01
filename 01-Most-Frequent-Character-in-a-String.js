@@ -29,7 +29,7 @@ for (let char of str){
 }
 
 
-console.log(maximum);
+console.log(maximum);  // a
 
 
 
