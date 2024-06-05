@@ -51,7 +51,33 @@ for (let i = 0; i < arr.length; i++){
 console.log( ways); 
 console.log(uniqueWays);
 
+let result = 0;
 
+for (let way of uniqueWays){
+    const numerator = factorial(way.length);
+    let denominator = 1
+    let obj = {}
+    for (let char of way){
+        if (obj[char] === undefined){
+            obj[char] = 1
+        }
+        else{
+            obj[char]++
+        }
+    }
+
+
+    for (let [key, value] of Object.entries(obj)){
+        denominator *= factorial(value)
+    }
+    result = result + (numerator / denominator)
+}
+
+console.log("-----------")
+
+console.log(result)
+
+console.log("---------------")
 /*
 Approach :
 
