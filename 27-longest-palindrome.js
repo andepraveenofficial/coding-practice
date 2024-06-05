@@ -1,6 +1,6 @@
 // Longest Palindrome
 
-let str = "aabcdaea";  // O(1)
+let str = "ab";  // O(1)
 
 const obj = {};  // O(1)
 
@@ -45,4 +45,6 @@ console.log("=================")
 Time Complexity :
 
 O(1) + O(1) + O(1) + O(n) + O(n) + O(1) = O(n)
+
 */
+

@@ -10,7 +10,7 @@ Given an array of distinct integers and a target, return all unique combinations
 */
 
 const arr = [2, 3, 6, 7];
-const target = 7;
+const target = 6;
 
 const bigArray = [];
 
@@ -24,7 +24,7 @@ for (let num of arr){
     bigArray.push(...temp);
 }
 
-console.log(bigArray);  // [2, 2, 2, 3,3, 6, 7 ]
+console.log(bigArray);  // [2, 2, 2, 3, 3, 6, 7 ]
 
 console.log("-----------------")
 

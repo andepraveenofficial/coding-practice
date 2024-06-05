@@ -7,6 +7,34 @@ Given a string containing '(', ')', '{', '}', '[', and ']', determine if it is v
 A string is valid if brackets are closed in the correct order and match their types.	
 */
 
+let str = "()[]{}";
+
+let stack = [];
+
+ for (let char of str){
+    console.log(char)
+    if (char === "("){
+        stack.push(char);
+    }
+    else{
+        stack.pop();
+    }
+ }
+
+
+ if (stack.length === 0){
+    console.log(true)
+ }
+ else{
+    console.log(false)
+ }
+
+ 
+
+/*
+
+// One Way : 
+
 let brackets = "()[]{}";
 
 for (let i=0; i<brackets.length; i++){
@@ -31,3 +59,4 @@ if (brackets.length === 0){
 else{
     console.log(false);
 }
+*/

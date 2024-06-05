@@ -14,7 +14,7 @@ ways : 5
 2 2
 
 */
-let steps = 4;
+let steps = 5;
 let frequency = [1,2];
 
 function factorial(num){
