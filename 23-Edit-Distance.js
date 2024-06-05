@@ -17,6 +17,5 @@ Operations :
 let word1 = "horse";
 const word2 = "ros"; 
 
-// Pending
-
+let output = word1
 console.log(word1)

@@ -14,37 +14,130 @@ ways : 5
 2 2
 
 */
-let steps = 5;
-let frequency = [1,2];
 
-function factorial(num){
-    if (num === 1){
-        return num;
+// One Way : Pending 
+
+let steps = 4;
+let frequency = [1, 2];
+
+function factorial(num) {
+    let result = 1;
+    for (let i = 2; i <= num; i++) {
+        result *= i;
     }
-    else{
-        return num * factorial(num - 1);
-    }
+    return result;
 }
 
 
 let arr = [...Array(steps).fill(frequency[0]), ...Array(steps).fill(frequency[1])];
-console.log(arr)  // [1,1,1,1,2,2,2,2]
+// console.log(arr);  // Output: [1, 1, 1, 1, 2, 2, 2, 2]
 
-let ways = 0;
-for (let i=0; i<arr.length; i++){
-   for (let j=i+1; j<arr.length; j++){
-        let part = arr.slice(i,j);
-        const sum = part.reduce((acc, curr) => acc+curr);
+let ways = [];
+let uniqueWays = new Set()
+let uniqueCombinations = new Set()
+for (let i = 0; i < arr.length; i++){
+   for (let j = i + 1; j <= arr.length; j++){
+        let part = arr.slice(i, j);
+        const sum = part.reduce((acc, curr) => acc + curr);
 
-        if ( sum === steps){
-            let uniqueItems = [...new Set(part)].length;
-            const add = factorial(uniqueItems);  // arrangements
-            ways = ways + add
-           }
+        if (sum === steps){
+            ways.push(part)
+            const stringPart = part.join("")
+            uniqueWays.add(stringPart)
+        }
    }
 }
 
-console.log(ways);  // 5
+console.log( ways); 
+console.log(uniqueWays);
+
+
+/*
+Approach :
+
+let start = {
+    1:{
+        1:{
+            1:{
+                1:1,
+                2:2
+            },
+            2:{
+                1:1,
+                2:2
+            }
+        },
+        2:{
+            1:{
+                1:1,
+                2:2
+            },
+            2:{
+                1:1,
+                2:2
+            }
+        }
+    },
+    2:{
+        1:{
+            1:{
+                1:1,
+                2:2
+            },
+            2:{
+                1:1,
+                2:2
+            }
+        },
+        2:{
+            1:{
+                1:1,
+                2:2
+            },
+            2:{
+                1:1,
+                2:2
+            }
+        }
+    }
+}
+
+
+// Another Way : Pending
+
+function createNestedObjects(steps, frequency){
+    // Base Case
+    if (steps === 1){
+        let baseObj = {};
+        baseObj[frequency[0]] = 1;
+        baseObj[frequency[1]] = 2;
+        return baseObj;
+    }
+    let obj = {};
+    
+
+    obj[frequency[0]] = createNestedObjects(steps-1, frequency);
+    obj[frequency[1]] = createNestedObjects(steps-1, frequency);
+    // console.log(obj)/
+
+    return obj
+}
+
+
+
+let steps = 4;
+let frequency = [1,2];
+
+const stepsObj = createNestedObjects(steps, frequency);
+
+*/
+
+
+
+
+
+
+
 
 
 
