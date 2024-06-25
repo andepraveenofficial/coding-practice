@@ -33,7 +33,6 @@ let stack = [-1];
 
  console.log(maxLength);  // 4
 
-
 /*
 "(()))())("
  01234

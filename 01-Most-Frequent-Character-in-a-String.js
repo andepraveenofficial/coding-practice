@@ -8,29 +8,37 @@ If multiple characters have the same frequency, return any one of them.
 
 */
 
-
-const str = "abracadabra";
+const str = "abracadabrar";
 
 const obj = {};
-
-let maximum = str[0];
-
+let maxReapeated = null;
 for (let char of str){
     if (!obj[char]){
-        obj[char] = 1;
+        obj[char] = 1
     }
     else{
-        obj[char]++;
+        obj[char]++
     }
 
-    if (obj[char] > obj[maximum]){
-        maximum = char;
+    console.log(obj)
+
+    if (!maxReapeated){
+        maxReapeated = char
     }
+    else{
+        if (obj[char] > obj[maxReapeated]){
+            maxReapeated = char
+        }
+    }
+    console.log(maxReapeated)
 }
 
 
-console.log(maximum);  // a
+console.log("------------")
 
+console.log(maxReapeated);  // a
+
+console.log("--------------")
 
 
 

@@ -3,34 +3,34 @@
 const data = { 
   "level1": { 
     "level2": { 
-      "level3": "This is the deepest value" 
+      "level3": "This is the deepest value at level3" 
     } 
   }, 
   "anotherKey": "Not the deepest" 
 }; 
 
 
-function deepestKey(data, key){
-  console.log(data, key)
-  console.log("---------------")
-    if (typeof data[key] === "object"){
-      let childData = data[key]
-        let childKey = Object.keys(data[key])[0]
-        return deepestKey(childData, childKey)  // recursive call
-    }
-    else{
-      return data[key]
-    }
+function nestedKey(data){
+  if (typeof data === "object"){
+      const mainKey = Object.keys(data)[0]
+      console.log(mainKey)
+      nestedKey(data[mainKey])
+  }   
+  else{
+      console.log("No more nested keys")
+      console.log("-----------")
+      console.log(data)
+  }
 }
 
 
 
-const result = deepestKey(data, Object.keys(data)[0]);
+const result = nestedKey(data);
 
 
 console.log("===================")
 
-console.log(result) // This is the deepest value
+nestedKey(data) // This is the deepest value
 
 console.log("===================")
 

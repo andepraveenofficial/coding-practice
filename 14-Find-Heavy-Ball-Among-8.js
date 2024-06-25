@@ -6,7 +6,6 @@ Description :
 Given 8 balls, where 7 have equal weight and 1 is heavier, determine the minimum number of iterations to find the heavy ball.	
 */
 
-
 function findHeavyBall(balls) {
     // First Weighing
     let group1 = balls.slice(0, 3);

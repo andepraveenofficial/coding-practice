@@ -8,7 +8,6 @@ The output should be the first character, the number of characters between the f
 Subsequent queries should reduce the number by 1.	
 */
 
-
 class NumeroNameTransformer{
     // Initialization
     constructor(name){

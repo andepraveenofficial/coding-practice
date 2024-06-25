@@ -10,14 +10,23 @@ A string is valid if brackets are closed in the correct order and match their ty
 let str = "()[]{}";
 
 let stack = [];
+const opening = "{[("
+const pairs = {
+    "{":"}",
+    "[":"]",
+    "(":")"
+}
 
  for (let char of str){
     console.log(char)
-    if (char === "("){
+    if (opening.includes(char)){
         stack.push(char);
     }
     else{
-        stack.pop();
+        const peek = stack.at(-1) 
+        if (pairs[peek] === char){
+            stack.pop();
+        }
     }
  }
 

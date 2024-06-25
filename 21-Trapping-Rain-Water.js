@@ -15,8 +15,6 @@ let totalWater = rainAreas.reduce((acc, curr) => acc < curr.length ? curr.length
 console.log(totalWater); // 6
 
 
-
-
 /*
 // one way :
 
@@ -41,3 +39,4 @@ for (let i=0; i<arr.length; i++){
 
 console.log(result);  // 6
 */
+

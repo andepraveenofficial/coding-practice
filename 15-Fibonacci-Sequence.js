@@ -19,9 +19,3 @@ while (n > fibonacciSeries.length){
 
 console.log(fibonacciSeries)  // [ 0, 1, 1, 2, 3 ]
 
-
-
-
-
-
-

@@ -10,7 +10,7 @@ Given an array of distinct integers and a target, return all unique combinations
 */
 
 const arr = [2, 3, 6, 7];
-const target = 6;
+const target = 7;
 
 const bigArray = [];
 

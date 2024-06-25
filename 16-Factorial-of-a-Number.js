@@ -7,15 +7,14 @@ Write a function to calculate the factorial of a given number n.
 */
 
 function findFactorial(num){
-    if(num === 1){
+    if(num === 0 || num === 1){
         // Base Condition
-        return num 
+        return 1 
     }
    
         // Recursive Call
         let result = num * findFactorial(num-1)
         return result;
-
 }
 
 

@@ -16,7 +16,7 @@ console.log(items, taxRate)
 
 const total = items.reduce((acc, item) => {
   const {price, quantity} = item;
-  return acc + price * quantity;
+  return acc + (price * quantity);
 }, 0)
 
 
